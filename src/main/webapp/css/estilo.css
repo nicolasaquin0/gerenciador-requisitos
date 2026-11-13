@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    margin: 0;
+    color: #222;
+    background: #eef1f5;
+}
+.topo {
+    background: #24527a;
+    color: white;
+    padding: 14px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+.topo strong {
+    font-size: 18px;
+}
+.topo a {
+    color: white;
+    margin-left: 18px;
+    text-decoration: none;
+    opacity: 0.9;
+}
+.topo a:hover {
+    opacity: 1;
+    text-decoration: underline;
+}
+.caixa, .conteudo {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    padding: 28px;
+}
+.caixa {
+    max-width: 400px;
+    margin: 60px auto;
+}
+.conteudo {
+    max-width: 900px;
+    margin: 30px auto;
+}
+h1 {
+    margin: 0 0 6px;
+    font-size: 24px;
+    color: #24527a;
+}
+h2 {
+    font-size: 18px;
+    margin-top: 32px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e2e2;
+}
+.subtitulo {
+    margin: 0 0 16px;
+    color: #666;
+}
+label, input, select, textarea {
+    display: block;
+    width: 100%;
+}
+label {
+    margin-top: 14px;
+    font-size: 14px;
+    font-weight: 600;
+}
+input, select, textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+}
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #24527a;
+    box-shadow: 0 0 0 2px rgba(36, 82, 122, 0.2);
+}
+.linha {
+    display: flex;
+    gap: 14px;
+}
+.linha > div {
+    flex: 1;
+}
+button, .botao {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 9px 18px;
+    background: #24527a;
+    border: 0;
+    border-radius: 4px;
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+button:hover, .botao:hover {
+    background: #1a3d5c;
+}
+.caixa button {
+    width: 100%;
+}
+a {
+    color: #24527a;
+    margin-left: 10px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 9px;
+    text-align: left;
+}
+th {
+    background: #f3f5f8;
+    font-size: 14px;
+}
+.vazio {
+    text-align: center;
+    color: #777;
+}
+.erro {
+    color: #b00020;
+    min-height: 18px;
+    margin: 10px 0 0;
+}
+.acesso {
+    margin-top: 20px;
+    padding: 12px;
+    background: #f3f5f8;
+    border-left: 3px solid #24527a;
+    font-size: 13px;
+    color: #444;
+}
+.acesso p {
+    margin: 2px 0;
+}
+@media (max-width: 600px) {
+    .topo {
+        padding: 12px 16px;
+    }
+    .topo a {
+        margin: 0 16px 0 0;
+    }
+    .conteudo, .caixa {
+        margin: 16px;
+        padding: 18px;
+    }
+    .linha {
+        display: block;
+    }
+    table {
+        font-size: 13px;
+    }
+}

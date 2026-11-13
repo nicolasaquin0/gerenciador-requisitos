@@ -1,0 +1,10 @@
+<%@ page pageEncoding="UTF-8" %>
+<header class="topo">
+    <strong>Gerenciador de Requisitos</strong>
+    <nav>
+        <a href="menu.jsp">Início</a>
+        <a href="projeto.jsp">Projetos</a>
+        <a href="requisito.jsp">Requisitos</a>
+        <a href="logout">Sair</a>
+    </nav>
+</header>
