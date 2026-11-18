@@ -1,10 +1,14 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <header class="topo">
     <strong>Gerenciador de Requisitos</strong>
     <nav>
         <a href="menu.jsp">Início</a>
         <a href="projeto.jsp">Projetos</a>
         <a href="requisito.jsp">Requisitos</a>
+        <c:if test="${sessionScope.usuarioLogado.admin}">
+            <a href="usuarios">Usuários</a>
+        </c:if>
         <a href="logout">Sair</a>
     </nav>
 </header>

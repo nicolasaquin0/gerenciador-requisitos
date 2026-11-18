@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/estilo.css">
     </head>
     <body>
-        <main class="caixa">
+        <main class="caixa login">
             <h1>Gerenciador de Requisitos</h1>
             <p class="subtitulo">Entre com seu e-mail e senha.</p>
             <form action="login" method="post">

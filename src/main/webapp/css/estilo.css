@@ -104,8 +104,45 @@ button, .botao {
 button:hover, .botao:hover {
     background: #1a3d5c;
 }
-.caixa button {
+.login button {
     width: 100%;
+}
+.estreito {
+    max-width: 520px;
+}
+.botao {
+    margin-left: 0;
+}
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+}
+.checkbox input {
+    width: auto;
+    margin: 0;
+}
+.dica {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: #666;
+}
+.sucesso {
+    color: #137333;
+}
+.acoes a {
+    margin: 0 10px 0 0;
+}
+.form-excluir {
+    display: inline;
+}
+.form-excluir .link {
+    margin: 0;
+    padding: 0;
+    background: none;
+    color: #b00020;
+    text-decoration: underline;
 }
 a {
     color: #24527a;

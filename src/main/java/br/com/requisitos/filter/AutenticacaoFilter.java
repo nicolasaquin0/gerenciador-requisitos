@@ -10,7 +10,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/menu.jsp", "/projeto.jsp", "/requisito.jsp"})
+@WebFilter(urlPatterns = {"/menu.jsp", "/projeto.jsp", "/requisito.jsp", "/usuarios"})
 public class AutenticacaoFilter implements Filter {
 
     @Override

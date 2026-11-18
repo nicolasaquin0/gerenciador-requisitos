@@ -1,28 +1,36 @@
 package br.com.requisitos.servlet;
 
 import br.com.requisitos.model.Usuario;
+import br.com.requisitos.service.UsuarioService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.sql.SQLException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+    private final UsuarioService usuarioService = new UsuarioService();
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("UTF-8");
-        String email = request.getParameter("email");
-        String senha = request.getParameter("senha");
-
-        if ("admin@requisitos.com".equals(email) && "admin123".equals(senha)) {
-            request.getSession().setAttribute("usuarioLogado", new Usuario("Administrador", email, "ADMIN"));
-            response.sendRedirect(request.getContextPath() + "/menu.jsp");
-        } else {
+        try {
+            Usuario usuario = usuarioService.autenticar(request.getParameter("email"), request.getParameter("senha"));
+            if (usuario != null) {
+                request.getSession().invalidate();
+                request.getSession(true).setAttribute("usuarioLogado", usuario);
+                response.sendRedirect(request.getContextPath() + "/menu.jsp");
+                return;
+            }
             request.setAttribute("erro", "E-mail ou senha inválidos.");
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+        } catch (SQLException e) {
+            log("Erro ao autenticar", e);
+            request.setAttribute("erro", "Não foi possível conectar ao banco de dados.");
         }
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 }
