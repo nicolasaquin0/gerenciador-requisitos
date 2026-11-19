@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
             }
             request.setAttribute("erro", "E-mail ou senha inválidos.");
         } catch (SQLException e) {
-            log("Erro ao autenticar", e);
+            System.err.println("Erro ao autenticar: " + e.getMessage());
             request.setAttribute("erro", "Não foi possível conectar ao banco de dados.");
         }
         request.getRequestDispatcher("/index.jsp").forward(request, response);

@@ -5,7 +5,7 @@ COPY src ./src
 RUN mvn -q -B package
 
 FROM tomcat:11.0-jdk21
-RUN rm -rf /usr/local/tomcat/webapps/*
+RUN rm -rf /usr/local/tomcat/webapps/* && sed -i 's/port="8005"/port="-1"/' /usr/local/tomcat/conf/server.xml
 COPY --from=build /app/target/*.war /usr/local/tomcat/webapps/ROOT.war
 EXPOSE 8080
 CMD ["sh", "-c", "sed -i \"s/port=\\\"8080\\\"/port=\\\"${PORT:-8080}\\\"/\" conf/server.xml && catalina.sh run"]
